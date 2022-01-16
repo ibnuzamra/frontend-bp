@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-prod
+  namespace: production
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: frontend-prod
+    spec:
+      containers:
+        - name: frontend-prod
+          image: 643549573960.dkr.ecr.ap-southeast-1.amazonaws.com/frontend-prd:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: 600m
+              memory: 768Mi
+            requests:
+              cpu: 200m
+              memory: 384Mi
+  selector:
+    matchLabels:
+      app: frontend-prod
