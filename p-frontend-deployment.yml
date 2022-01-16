@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: frontend-prod
-          image: 643549573960.dkr.ecr.ap-southeast-1.amazonaws.com/frontend-prd:latest
+          image: ibnuzamra/frontend-prd:latest
           ports:
             - containerPort: 3000
           resources:
