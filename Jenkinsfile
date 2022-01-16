@@ -29,7 +29,7 @@ pipeline{
             sshagent(['cilist-cluster']) {
             sh "rsync -chavzP p-frontend-deployment.yml ubuntu@13.250.114.157:/home/ubuntu/"
             script {
-                sh "ssh ubuntu@13.250.114.157 kubectl delete -f ."
+                sh "ssh ubuntu@13.250.114.157 kubectl delete -f p-frontend-deployment.yml"
             }
             script {
                 try{
