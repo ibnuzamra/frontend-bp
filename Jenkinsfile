@@ -40,7 +40,7 @@ pipeline {
                  withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
                     sh 'docker login -u ibnuzamra -p ${dockerhubpwd}'
                  }
-                 sh "docker push $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME-prd:${BUILD_NUMBER}"
+                 sh "docker push $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME-stg:${BUILD_NUMBER}"
                 }
             }
       }
