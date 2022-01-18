@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: frontend-prod
-          image: ibnuzamra/frontend-prd:latest
+          image: ibnuzamra/frontend-prd:versi
           ports:
             - containerPort: 3000
           resources:
