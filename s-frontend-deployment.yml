@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: ibnuzamra/frontend-stg:latest
+          image: ibnuzamra/frontend-stg:versi
           ports:
             - containerPort: 3000
           resources:
