@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-###  Installing dependencies
+#####  Installing dependencies
 
 RUN npm install --silent
 
