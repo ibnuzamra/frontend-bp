@@ -65,7 +65,7 @@ pipeline {
           script {
             if ( env.GIT_BRANCH == 'staging' ){
               //#Change url wget
-              sh 'wget https://raw.githubusercontent.com/ibnuzamra/backend-bp/main/s-frontend-deployment.yml'
+              sh 'wget https://raw.githubusercontent.com/ibnuzamra/frontend-bp/main/s-frontend-deployment.yml'
               sh 'sed -i "s/versi/$BUILD_NUMBER/g" s-"${DOCKER_IMAGE_APPS}"-deployment.yml'
               sh 'kubectl apply -f s-"${DOCKER_IMAGE_APPS}"-deployment.yml'
               sh 'rm -rf *'
@@ -73,7 +73,7 @@ pipeline {
             }
             else if ( env.GIT_BRANCH == 'main' ){
               //#Change url wget
-              sh 'wget https://raw.githubusercontent.com/ibnuzamra/backend-bp/main/p-frontend-deployment.yml'
+              sh 'wget https://raw.githubusercontent.com/ibnuzamra/frontend-bp/main/p-frontend-deployment.yml'
               sh 'sed -i "s/versi/$BUILD_NUMBER/g" p-"${DOCKER_IMAGE_APPS}"-deployment.yml'
               sh 'kubectl apply -f p-"${DOCKER_IMAGE_APPS}"-deployment.yml'
               sh 'rm -rf *'
