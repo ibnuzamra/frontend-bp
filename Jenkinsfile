@@ -67,7 +67,7 @@ pipeline {
               //#Change url wget
               sh 'wget https://raw.githubusercontent.com/ibnuzamra/frontend-bp/main/s-frontend-deployment.yml'
               sh 'sed -i "s/versi/$BUILD_NUMBER/g" s-"${DOCKER_IMAGE_APPS}"-deployment.yml'
-              sh 'kops export kubecfg --admin --state s3://k8s-knsrvtf'
+              //sh 'kops export kubecfg --admin --state s3://k8s-knsrvtf'
               sh 'kubectl apply -f s-"${DOCKER_IMAGE_APPS}"-deployment.yml'
               sh 'rm -rf *'
               echo "Deploy ${BUILD_NUMBER} To Server Staging ${currentBuild.currentResult}"
